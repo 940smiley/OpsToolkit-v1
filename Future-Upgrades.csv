@@ -1,0 +1,6 @@
+Component/Dependency,Possible Upgrade Versions,Compatibility Notes,Estimated Complexity,Mitigation Strategies,Codex Commentary,Risk Flag
+PowerShell Core,7.4.x,"Ensure modules support pwsh; update scripts for cross-platform paths",Medium,"Test modules under pwsh, add compatibility notes",Useful for modern shells,Medium
+Windows Package Manager,1.8.x,"Check winget manifests and sources",Medium,"Pin trusted sources, add retries",Enables repeatable installs,Medium
+VS Code,Latest stable,"Extension compatibility may vary",Medium,"Validate key extensions, document defaults",Smooth dev experience,Low
+Docker Desktop,Latest stable,"Requires virtualization support",High,"Document BIOS/Hyper-V prerequisites",Potential user friction,High
+Python Packages,3.12 LTS compatible,"Confirm scripts handle new default encodings",Medium,"Pin requirements, run smoke tests",Keeps automation current,Medium

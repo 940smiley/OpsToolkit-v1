@@ -1,0 +1,6 @@
+Feature Name,Feasibility Score,Estimated Dev Time,Expected Impact,Priority,Recommended Branch
+Winget Source Health Checks,0.8,1-2 days,Improves reliability of installs,High,codex/winget-health
+Launcher Dark Mode,0.6,2-3 days,Better UX in low-light environments,Medium,codex/launcher-dark-mode
+Automated Log Bundling,0.7,1-2 days,Faster troubleshooting for users,Medium,codex/log-bundles
+Module Smoke Test Harness,0.5,3-4 days,Catches regressions before release,High,codex/smoke-tests
+WSL Distro Selector,0.6,2 days,Simplifies distro setup choice,Medium,codex/wsl-selector
