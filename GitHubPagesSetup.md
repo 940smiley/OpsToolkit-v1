@@ -21,7 +21,7 @@ Use a landing page that links to installer steps and module docs.
 
 ## Custom Domain
 1. Add a `CNAME` file in `/docs` with your domain.
-2. Point DNS to GitHub Pages (A records to `185.199.108-111.153` and `CNAME` to `<user>.github.io`).
+2. Point DNS to GitHub Pages (A records to `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153` and `CNAME` to `<user>.github.io`).
 3. Enable **Enforce HTTPS** once DNS resolves.
 
 ## CI/CD Deployment Suggestion
