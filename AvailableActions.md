@@ -29,7 +29,7 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-powershell@v1
+      - uses: actions/setup-powershell@v2
       - name: Run PSScriptAnalyzer
         shell: pwsh
         run: |
