@@ -1,0 +1,1 @@
+    Get-ChildItem -Path . -Recurse | Get-FileHash | Group-Object -Property Hash | Where-Object {$_.Count -gt 1} | ForEach-Object {$_.Group | Select-Object Path, Length | Sort-Object Length -Descending}

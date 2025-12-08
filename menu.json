@@ -1,0 +1,24 @@
+{
+  "groups": [
+    {
+      "name": "Media Tools",
+      "items": []
+    },
+    {
+      "name": "Data Tools",
+      "items": []
+    },
+    {
+      "name": "System Tools",
+      "items": []
+    },
+    {
+      "name": "App Tools",
+      "items": []
+    },
+    {
+      "name": "Standalone Scripts",
+      "items": []
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+Perfect — let’s expand the script so it captures all common runnable program types (.exe, .msc, .bat, .cmd, .ps1, .vbs, .js) and writes them into your paths.txt on the Desktop. Here’s the updated PowerShell:
+
+# Define output file on Desktop
+$desktop = [Environment]::GetFolderPath("Desktop")
+$outputFile = Join-Path $desktop "paths.txt"
+
+# Define file extensions to search for (expandable list)
+$extensions = @("*.exe", "*.msc", "*.bat", "*.cmd", "*.ps1", "*.vbs", "*.js")
+
+# Search all fixed drives for matching files
+$paths = foreach ($ext in $extensions) {
+    Get-ChildItem -Path $env:SystemDrive\ -Recurse -Include $ext -ErrorAction SilentlyContinue |
+        Select-Object -ExpandProperty FullName
+}
+
+# Remove duplicates and sort
+$paths = $paths | Sort-Object -Unique
+
+# Write results to file
+$paths | Out-File -FilePath $outputFile -Encoding UTF8
+
+Write-Host "All runnable program paths have been saved to $outputFile"
+
+---
+
+⚙️ Notes
+- Extensions list → You can add/remove as needed. For example, add "*.py" if you want Python scripts too.
+- Scope → Right now it scans the entire system drive (C:\). If you want to limit it to program directories, replace $env:SystemDrive\ with:
+
+  $searchPaths = @("C:\Program Files", "C:\Program Files (x86)", "C:\Windows\System32")
+  foreach ($path in $searchPaths) {
+      foreach ($ext in $extensions) {
+          Get-ChildItem -Path $path -Recurse -Include $ext -ErrorAction SilentlyContinue |
+              Select-Object -ExpandProperty FullName
+      }
+  }
+
+- Performance → Full drive scan can take a long time and produce a huge file. Restricting to program directories makes it faster and more focused.
+
+---
+
+Do you want me to optimize this further so it only lists installed applications (from registry or Start Menu) instead of every single script/executable on disk? That would give you a cleaner, more “programs only” list.
