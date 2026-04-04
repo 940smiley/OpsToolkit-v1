@@ -428,3 +428,4 @@ $(cat pr.diff)
               pull_number: context.payload.pull_request.number,
               merge_method: "squash"
             })
+
